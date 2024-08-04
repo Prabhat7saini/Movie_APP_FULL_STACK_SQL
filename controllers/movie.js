@@ -126,7 +126,8 @@ exports.getComments = async (req, res) => {
                 attributes: ['name'], // Include only the name field from the User model
             }]
         });
-        return sendSuccessResponse(res,200,"Fetched comments successfully",Comment);
+        // console.log(Comments)
+        return sendSuccessResponse(res,200,"Fetched comments successfully",Comments);
       
     } catch (error) {
         console.error(error);

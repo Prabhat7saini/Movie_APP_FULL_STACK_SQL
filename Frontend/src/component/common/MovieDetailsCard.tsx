@@ -82,7 +82,7 @@ const MovieDetailCard: React.FC = () => {
         const fetchData = async () => {
             try {
                 dispatch(setLoading(true));
-                const response = await axios.get<{ allMovie: Movie[] }>("http://localhost:4000/api/v1/movie/allMovies");
+                const response = await axios.get<{ allMovie: Movie[] }>("https://movieforyou-0aop.onrender.com/api/v1/movie/allMovies");
                 setMovies(response.data.allMovie);
                 await fetchComments(); // Fetch comments initially
             } catch (error) {

@@ -39,7 +39,7 @@ const Navbar = () => {
         dispatch(setLoading(true));
         const fetchAndSetMovies = async () => {
             try {
-                const response = await axios.get<{ allMovie: Movie[] }>("http://localhost:4000/api/v1/movie/allMovies");
+                const response = await axios.get<{ allMovie: Movie[] }>("https://movieforyou-0aop.onrender.com/api/v1/movie/allMovies");
                 const movies = response.data.allMovie;
                 setOriginalMovies(movies); // Store original movies
                 dispatch(setMovies(movies)); // Dispatch setMovies with the correct type

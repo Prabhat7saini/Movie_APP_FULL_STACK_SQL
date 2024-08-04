@@ -87,8 +87,8 @@ export const removeFavMovie = async(token:string,_id:string)=>{
         if (!response.data.success) {
             throw new Error(response.data.message);
         }
-        console.log(`REMOVE_Fav_MOVIE_API....`, response.data.remainingEntries)
-        return response.data.remainingEntries;
+        console.log(`REMOVE_Fav_MOVIE_API....`, response.data.data)
+        return response.data.data;
     }
     catch (err) {
         console.log("REMOVE_FAV_Movies API ERROR............", err);
@@ -128,8 +128,8 @@ export const getComment=async(movieId:string)=>{
      if(!response.data.success){
          throw new Error(response.data.message);
      }
-     console.log(`GET_COMMENT_API`,response.data.Comments)
-     return response.data.Comments;
+     console.log(`GET_COMMENT_API`,response.data.data)
+     return response.data.data;
    } catch (error) {
     console.log("GET_COMMENT_Movies API ERROR............", error);
    }

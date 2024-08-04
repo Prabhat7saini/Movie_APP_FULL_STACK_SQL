@@ -1,8 +1,10 @@
 
 const sendSuccessResponse = (res,statusCode, message,data={}) => {
+    console.log(data)
     return res.status(statusCode).json({
          success: true,
-         message: message,
+         message,
+         data
      });
  };
  

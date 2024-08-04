@@ -2,7 +2,7 @@ import { apiConnector } from "../apiConnector";
 import { endpoints } from "../apis";
 import { LoginResponse, user } from "../../utils/interface/types";
 import { setCurrentUser, setToken } from "../../redux/slices/authSlice";
-import { setFavMovie, setMovie } from "../../redux/slices/movieSlice";
+import { setFavMovie, setMovies } from "../../redux/slices/movieSlice";
 import { NavigateFunction } from "react-router-dom";
 import { Dispatch } from "redux";
 const { SIGNUP_API, LOGIN_API } = endpoints;
@@ -35,9 +35,10 @@ export const login = (email: string, password: string, navigate: (path: string) 
             // toast.success("Signup Successful");
             const user: user = response.data.user
             const token: string = response.data.token
+            console.log(user,"login")
             dispatch(setCurrentUser(user));
             dispatch(setToken(token));
-            dispatch(setFavMovie(user.FavMovie))
+            // dispatch(setFavMovies(user.data))
             localStorage.setItem("token", JSON.stringify(token));
             localStorage.setItem("user", JSON.stringify(user));
 
