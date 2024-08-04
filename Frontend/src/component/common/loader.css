@@ -1,0 +1,50 @@
+/* Loader container styling */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #FFF; /* White border for visibility */
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    box-sizing: border-box;
+    background-color: #000; /* Black background for the loader */
+    animation: rotation 1s linear infinite;
+    z-index: 9999; /* Ensure it sits above other content */
+  }
+  
+  /* Styling for dots on the loader */
+  .loader::after,
+  .loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FF3D00; /* Orange dots */
+    width: 6px;
+    height: 6px;
+    transform: translate(150%, 150%);
+    border-radius: 50%;
+  }
+  
+  .loader::before {
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    transform: translate(-150%, -150%);
+  }
+  
+  /* Animation for rotation */
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
